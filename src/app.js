@@ -1,8 +1,9 @@
 import express from "express";
 const app = express();
+app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.status(200).set("Content-Type", "text/plain").send("Hello, World!");
+app.get("/api", (req, res) => {
+  res.json({message: 'get /api'})
 });
 
 // const port = 3000;
